@@ -11,6 +11,8 @@ export default defineConfig({
 					filename.split(/[/\\]/).includes('node_modules') ? undefined : true
 			},
 			// Fully prerendered static site. Output goes to /build and can be served by any static host.
+			// On Vercel, vercel.json points the deployment at /build. Keep these options: they keep the
+			// styled 404 page. (The adapter's "remove options for zero-config mode" warning is expected.)
 			adapter: adapter({
 				pages: 'build',
 				assets: 'build',
