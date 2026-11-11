@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en-PH">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="color-scheme" content="light dark" />
+		<meta name="theme-color" content="#eef0f2" media="(prefers-color-scheme: light)" />
+		<meta name="theme-color" content="#061532" media="(prefers-color-scheme: dark)" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.ico" sizes="48x48" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.svg" type="image/svg+xml" />
+		<link rel="apple-touch-icon" href="%sveltekit.assets%/apple-touch-icon.png" />
+		<script>
+			// Runs before first paint. `js` enables reveal styles; `has-loader` shows the logo
+			// loader on the first page of a session only, never under reduced motion.
+			(function (root) {
+				root.classList.add('js');
+				try {
+					if (!sessionStorage.getItem('csl-loader') && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+						sessionStorage.setItem('csl-loader', '1');
+						root.classList.add('has-loader');
+					}
+				} catch (e) {}
+			})(document.documentElement);
+		</script>
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>
